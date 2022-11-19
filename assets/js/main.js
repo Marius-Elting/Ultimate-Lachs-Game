@@ -94,7 +94,7 @@ function start() {
     resultDiv.style.display = "none";
     document.body.addEventListener("keyup", keyUpFunction);
     document.body.addEventListener("keydown", keyDownFunction);
-    time = 5;
+    time = 30;
     timeSpan.innerHTML = time;
     fish.style.opacity = "1";
     food.style.opacity = "1";
