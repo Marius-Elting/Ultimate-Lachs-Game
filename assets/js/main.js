@@ -25,17 +25,12 @@ let open = false;
 let eatMathLeft;
 let eatMathBottom;
 let score = 0;
-let time;
-let abc;
+let time = 30;
+let gameInterval;
 let foodLeft = Math.floor(Math.random() * (window.innerWidth - 250)) + 125;
 let foodBottom = Math.floor(Math.random() * (window.innerHeight - 250)) + 125;
-// console.log(foodLeft);
-// console.log(foodBottom);
 food.style.left = foodLeft + "px";
 food.style.bottom = foodBottom + "px";
-
-
-
 
 
 let keyDownFunction = (e) => {
@@ -99,7 +94,7 @@ function start() {
     fish.style.opacity = "1";
     food.style.opacity = "1";
     centerDiv.style.backgroundColor = "transparent";
-    abc = setInterval(timer, 1000);
+    gameInterval = setInterval(timer, 1000);
     console.log("start");
 
 }
@@ -112,7 +107,7 @@ function timer() {
         document.body.removeEventListener("keydown", keyDownFunction);
         document.body.removeEventListener("keyup", keyDownFunction);
         console.log("ende");
-        clearInterval(abc);
+        clearInterval(gameInterval);
 
         fish.style.opacity = "0";
         food.style.opacity = "0";
@@ -139,7 +134,6 @@ function walking() {
             left += lachsSpeed;
             fish.style.transform = "scaleX(11)";
             fish.style.transform = "rotate(180deg)";
-
         }
     } if (LEFT) {
         if (left <= 0) {
@@ -170,26 +164,6 @@ function walking() {
     fish.style.bottom = bottom + "px";
 }
 function checkPosition() {
-    // console.log(left);
-    // console.log(foodLeft);
-    // console.log(foodLeft + 150);
-    // let headLeft = left + eatMathLeft;
-    // let headBottom = bottom + eatMathBottom;
-    // console.log("Headleft " + headLeft);
-    // console.log("Foodleft " + foodLeft);
-    // console.log("Foodleft 100 " + (foodLeft + 100));
-    // console.log("HeadBottom " + headBottom);
-    // console.log("foodBottom " + foodBottom);
-    // console.log("foodBottom 60 " + (foodBottom + 60));
-    // if (open == true) {
-    //     if (headLeft >= foodLeft && headLeft <= foodLeft + 100 && headBottom >= foodBottom && headBottom <= foodBottom + 60) {
-    //         score++;
-    //         foodLeft = Math.floor(Math.random() * (window.innerWidth - 250)) + 125;
-    //         foodBottom = Math.floor(Math.random() * (window.innerHeight - 250)) + 125;
-    //         console.log("ESSEEN");
-    //     }
-    // }
-    // console.log(open);
     if (open == true) {
         if (elementsOverlap(food, head)) {
             score++;
@@ -215,6 +189,3 @@ function elementsOverlap(el1, el2) {
         domRect1.left > domRect2.right
     );
 }
-
-
-
