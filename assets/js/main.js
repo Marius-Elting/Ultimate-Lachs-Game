@@ -10,7 +10,7 @@ let timeSpan = document.getElementById("timeSpan");
 let centerDiv = document.getElementById("centerDiv");
 let anleitung = document.getElementById("anleitung");
 let left = 0;
-let direction = "LEFT";
+let direction;
 let interval;
 let count = 0;
 let speed = 80;
@@ -122,7 +122,6 @@ function timer() {
         }, 500);
     }
 }
-
 
 
 function walking() {
