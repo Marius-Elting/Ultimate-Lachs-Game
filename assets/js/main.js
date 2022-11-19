@@ -52,7 +52,7 @@ let keyDownFunction = (e) => {
             eatMathLeft = +45;
             eatMathBottom = +250;
             break;
-        case " ": cat.src = "../assets/img/lachs offen2.png";
+        case " ": cat.src = "./assets/img/lachs offen2.png";
             open = true;
     }
 
@@ -73,7 +73,7 @@ let keyUpFunction = (e) => {
             break;
         case "d": RIGHT = false;
             break;
-        case " ": cat.src = "../assets/img/lachs zu2.png";
+        case " ": cat.src = "./assets/img/lachs zu2.png";
             open = false;
     }
 
