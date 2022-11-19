@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Lachs</title>
+</head>
+
+<body>
+    <section id="backscene">
+        <div id="centerDiv">
+            <div>
+                <h1 id="score">Score: <span id="scoreSpan">0</span></h1>
+                <h1 id="timeRemain">Time: <span id="timeSpan">0</span></h1>
+            </div>
+            <button id="startButton" onclick="start()">Start</button>
+            <div id="resultDiv" class="information">
+                <h1>Results</h1>
+                <p>Glückwunsch du hast <span id="resultScore"></span> Fische gegessen</p>
+            </div>
+            <div id="anleitung" class="information">
+                <h3>Anleitung</h3>
+                <p>W = Oben / A = Links / S = Unten / D = Rechts </p>
+                <br>
+                <p>Hälst du die Lerrtaste gedrückt öffnet sich der Mund und du kannst den Fisch essen. Das Ziel ist es
+                    so viele Fische wie
+                    möglich zu essen
+                </p>
+                <br>
+                <p>Ja ich weiß die Steuerung ist gewöhnungsbedürftig (ist in Arbeit)</p>
+            </div>
+        </div>
+        <div id="fish">
+            <div id="head"></div>
+            <img id="cat" src="./assets/img/lachs zu2.png" alt="">
+        </div>
+        <img src="./assets/img/food.png" id="food" alt="">
+    </section>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
