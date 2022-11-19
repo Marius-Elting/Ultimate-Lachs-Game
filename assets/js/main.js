@@ -35,26 +35,33 @@ food.style.bottom = foodBottom + "px";
 
 let keyDownFunction = (e) => {
     console.log(e.key);
-    switch (e.key) {
-        case "w": UP = true;
-            eatMathLeft = +45;
-            eatMathBottom = +250;
-            break;
-        case "a": LEFT = true;
-            eatMathLeft = 0;
-            eatMathBottom = -45;
-            break;
-        case "s": DOWN = true;
-            eatMathLeft = +45;
-            eatMathBottom = 0;
-            break;
-        case "d": RIGHT = true;
-            eatMathLeft = +45;
-            eatMathBottom = +250;
-            break;
-        case " ": cat.src = "./assets/img/lachs offen2.png";
-            open = true;
+
+
+    if (e.key == "w" || e.key == "ArrowUp") {
+        UP = true;
+        eatMathLeft = +45;
+        eatMathBottom = +250;
     }
+    if (e.key == "a" || e.key == "ArrowLeft") {
+        LEFT = true;
+        eatMathLeft = 0;
+        eatMathBottom = -45;
+    }
+    if (e.key == "s" || e.key == "ArrowDown") {
+        DOWN = true;
+        eatMathLeft = +45;
+        eatMathBottom = 0;
+    }
+    if (e.key == "d" || e.key == "ArrowRight") {
+        RIGHT = true;
+        eatMathLeft = +45;
+        eatMathBottom = +250;
+    }
+    switch (e.key) {
+        case " ": cat.src = "./assets/img/lachs offen2.png";
+    }
+    open = true;
+
 
     walking();
     checkPosition();
@@ -65,16 +72,20 @@ let keyDownFunction = (e) => {
 let keyUpFunction = (e) => {
     // console.log(e.key);
     switch (e.key) {
-        case "w": UP = false;
-            break;
-        case "a": LEFT = false;
-            break;
-        case "s": DOWN = false;
-            break;
-        case "d": RIGHT = false;
-            break;
         case " ": cat.src = "./assets/img/lachs zu2.png";
             open = false;
+    }
+    if (e.key == "w" || e.key == "ArrowUp") {
+        UP = false;
+    }
+    if (e.key == "a" || e.key == "ArrowLeft") {
+        LEFT = false;
+    }
+    if (e.key == "s" || e.key == "ArrowDown") {
+        DOWN = false;
+    }
+    if (e.key == "d" || e.key == "ArrowRight") {
+        RIGHT = false;
     }
 
 
