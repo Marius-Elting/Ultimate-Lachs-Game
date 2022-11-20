@@ -12,8 +12,9 @@
 <body>
     <section id="backscene">
         <div id="centerDiv">
-            <div>
+            <div id="headDiv">
                 <h1 id="score">Score: <span id="scoreSpan">0</span></h1>
+                <h1 id="open">Kraft: <span id="openSpan">0</span></h1>
                 <h1 id="timeRemain">Time: <span id="timeSpan">0</span></h1>
             </div>
             <button id="startButton" onclick="start()">Start</button>
@@ -21,16 +22,25 @@
                 <h1>Results</h1>
                 <p>Glückwunsch du hast <span id="resultScore"></span> Fische gegessen</p>
             </div>
+            <div id="mode" class="information">
+                <h3>Mode</h3>
+                <label for="mode">
+                    <input checked id="mouseMode" name="mode" type="radio">Mouse Mode </label>
+                <label for="">
+                    <input id="keyboardMode" name="mode" type="radio">Keyboard Mode</label>
+
+            </div>
             <div id="anleitung" class="information">
                 <h3>Anleitung</h3>
                 <p>W,↑ = Oben / A,← = Links / S,↓ = Unten / D,→ = Rechts </p>
                 <br>
-                <p>Hältst du die Leertaste gedrückt, öffnet sich der Mund und du kannst den Fisch essen. Das Ziel ist es
+                <p>Hältst du die Leertaste gedrückt, öffnet sich der Mund und du kannst den Fisch essen.
+                    Doch pass auf du hast begrenzte Kraft das Maul auf zu halten.
+                    Das Ziel ist es
                     so viele Fische wie
                     möglich zu essen.
                 </p>
                 <br>
-                <p>Ja ich weiß die Steuerung ist gewöhnungsbedürftig (ist in Arbeit)</p>
             </div>
         </div>
         <div id="fish">
