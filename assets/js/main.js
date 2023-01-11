@@ -11,6 +11,7 @@ let centerDiv = document.getElementById("centerDiv");
 let anleitung = document.getElementById("anleitung");
 let modeChoose = document.getElementById("mode");
 let openSpan = document.getElementById("openSpan");
+let kraftStatus = document.getElementById("kraftStatus");
 let left = 50;
 let Top = 50;
 let direction;
@@ -37,6 +38,9 @@ let countPlus;
 let countMinus;
 let abc;
 let countMinusInterval;
+let kraftWidth;
+openSpan.innerHTML = openCount;
+
 let foodLeft = Math.floor(Math.random() * (window.innerWidth - 250)) + 125;
 let foodtop = Math.floor(Math.random() * (window.innerHeight - 250)) + 125;
 food.style.left = foodLeft + "px";
@@ -78,6 +82,7 @@ let spaceDownFunction = (e) => {
                 if (abc >= 1) {
                     return;
                 } else {
+                    openCount--;
                     abc = 1;
                     countMinusInterval = setInterval(countMinusFunction, 1000);
                     setTimeout(() => {
@@ -155,26 +160,17 @@ let mouseMoveFunction = (e) => {
 
 
 
-// let boxBoundingRect = fish.getBoundingClientRect();
-
-// let boxCenter = {
-//     x: boxBoundingRect.left + boxBoundingRect.width / 2,
-//     y: boxBoundingRect.top + boxBoundingRect.height / 2
-// };
-
-// document.addEventListener("mousemove", e => {
-//     let angle = Math.atan2(e.pageX - boxCenter.x, - (e.pageY - boxCenter.y)) * (180 / Math.PI);
-//     fish.style.transform = `rotate(${angle}deg)`;
-// });
-
 
 function start() {
+    kraftWidth = 0;
     score = 0;
     scoreSpan.innerHTML = score;
     anleitung.style.display = "none";
     startButton.style.display = "none";
     resultDiv.style.display = "none";
     modeChoose.style.display = "none";
+    kraftStatus.style.width = kraftWidth + "%";
+
 
     if (document.getElementById("mouseMode").checked) {
         document.body.addEventListener("mousemove", mouseMoveFunction);
@@ -189,7 +185,7 @@ function start() {
     }
 
 
-    time = 30;
+    time = 10;
     timeSpan.innerHTML = time;
     fish.style.opacity = "1";
     food.style.opacity = "1";
@@ -198,11 +194,15 @@ function start() {
 
     countPlus = setInterval(() => {
         if (open == false) {
-            openCount++;
-            openSpan.innerHTML = openCount;
-
+            kraftWidth += 1;
+            kraftStatus.style.width = kraftWidth + "%";
+            if (kraftWidth == 100) {
+                kraftWidth = 0;
+                openCount++;
+                openSpan.innerHTML = openCount;
+            }
         }
-    }, 2000);
+    }, 20);
 
 }
 

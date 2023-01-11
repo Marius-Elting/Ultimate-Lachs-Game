@@ -142,7 +142,36 @@ button:hover {
     right: 35%
 } */
 
-/* #open {} */
+#open {
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+}
+
+#open::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    border-radius: 10px;
+    z-index: -2;
+}
+
+#kraftStatus {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: blueviolet;
+    border-radius: 10px;
+    z-index: -1;
+    transition: .1s linear;
+}
 
 #anleitung {
     width: 550px;
